@@ -15,7 +15,7 @@ To use this LaTeX template, follow these steps:
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/your-username/Wits-IEEE-Latex-Template.git
+   git clone git@github.com:yourusername/EIEDesignLatexTemplate.git
    
 ## Edit the Main Document
 
