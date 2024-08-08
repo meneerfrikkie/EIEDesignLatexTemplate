@@ -1,0 +1,138 @@
+% =============================================
+% --- Document Setup ---
+% =============================================
+
+\newcommand{\CLASSINPUTbaselinestretch}{1.5}
+\newcommand{\CLASSINPUTtoptextmargin}{3cm}
+\newcommand{\CLASSINPUTbottomtextmargin}{3.5cm}
+\newcommand{\CLASSINPUToutersidemargin}{3.6cm}
+\newcommand{\CLASSINPUTinnersidemargin}{3.6cm}
+\documentclass[journal, a4paper,onecolumn, 11pt]{IEEEtran}
+\IEEEoverridecommandlockouts
+
+% =============================================
+% --- Packages ---
+% =============================================
+
+\usepackage{cite}
+\usepackage{amssymb,amsfonts}
+\usepackage{algorithmic}
+\usepackage{graphicx}
+\usepackage{textcomp}
+\usepackage{parskip}
+\usepackage{hyperref}
+\usepackage{booktabs}
+\usepackage{colortbl}
+\usepackage{lipsum}  
+\usepackage{float}
+\usepackage{enumitem}
+\usepackage{pifont}
+\usepackage{url}
+\usepackage{array}
+\usepackage{subcaption}
+\usepackage{setspace} % for adjusting line spacing
+\usepackage{ragged2e}
+\usepackage[table,xcdraw]{xcolor}
+\usepackage{multirow}
+\usepackage{gensymb}
+\usepackage[cmex10]{amsmath} \interdisplaylinepenalty=2500
+\usepackage[font=small]{caption}
+
+% =============================================
+% --- Hyperlink Setup ---
+% =============================================
+
+\hypersetup{
+    colorlinks,
+    linkcolor={black},
+    citecolor={black},
+    urlcolor={black}
+}
+
+\usepackage [backend=biber,style=ieee,]{biblatex}
+\addbibresource{Text/references.bib}
+
+% =============================================
+% --- Section Numbering Setup ---
+% =============================================
+
+\renewcommand\thesection{\arabic{section}}
+\renewcommand\thesubsection{\thesection.\arabic{subsection}}
+\renewcommand\thesubsubsection{\thesubsection.\arabic{subsubsection}}
+
+\renewcommand\thesectiondis{\arabic{section}}
+\renewcommand\thesubsectiondis{\thesectiondis.\arabic{subsection}}
+\renewcommand\thesubsubsectiondis{\thesubsectiondis.\arabic{subsubsection}}
+
+% =============================================
+% --- Modified Abstract ---
+% =============================================
+
+\newenvironment{modified_abstract}{
+    \begin{center}
+        \bfseries Abstract
+    \end{center}
+    \hspace{1em} % Add indentation
+    \begin{doublespace}
+        \fontsize{12}{14}\selectfont
+        \justifying
+}{
+    \end{doublespace}
+}
+
+\begin{document}
+
+% =============================================
+% --- Cover Page ---
+% =============================================
+
+\begin{titlepage}
+    \begin{center}
+        {\fontsize{18}{19.2}\selectfont \textbf{[Title of the Document]}} \\
+        \vspace{0.5cm}
+
+        [Month and Year] \\
+        [Author Name] \\
+        [Course or Project Title] \\
+
+        \vspace{1cm}
+        \input{Text/abstract}
+        
+        \vfill
+
+        \includegraphics[width=0.15\textwidth]{Figures/wits-logo.png} % Replace with your logo
+        
+        \vspace{0.8cm}
+        [University Name] \\
+        [Department or School Name]
+        
+    \end{center}
+\end{titlepage}
+
+\thispagestyle{plain}
+\pagestyle{plain}
+
+% =============================================
+% --- Document Content ---
+% =============================================
+
+\thispagestyle{empty}
+\addtocounter{page}{-1}
+\tableofcontents
+\input{Text/report}
+
+% =============================================
+% --- Bibliography ---
+% =============================================
+
+\newpage
+\printbibliography
+
+% =============================================
+% --- Appendices ---
+% =============================================
+\newpage
+\appendix
+\input{Text/appendix}
+
+\end{document}
